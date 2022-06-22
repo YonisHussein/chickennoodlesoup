@@ -16,3 +16,12 @@ CREATE TABLE role(
     department_id INT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE employee(
+    id INT NOT NULL AUTO_INCREMENT
+    firstname VARCHAR(30) NULL,
+    lastname VARCHAR(30) NULL,
+    role_id INT NULL,
+    manage_id INT NULL,
+    PRIMARY KEY (id)
+);
