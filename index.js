@@ -74,6 +74,15 @@ function viewAllRoles(){
     })
 }
 
+function viewAllEmployees(){
+    let query = "SELECT * FROM employee"
+    db.query(query, function(err,res){
+        if(err) throw err;
+        console.table(res);
+        startEmployee();
+    })
+}
+
 function addDepartment(){
     inquirer.prompt({
         type:'input',
