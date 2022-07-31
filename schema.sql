@@ -5,7 +5,7 @@ USE employee_db;
 
 CREATE TABLE department(
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAT(30) NULL,
+    name VARCHAR(30) NULL,
     PRIMARY KEY (id)
 );
 
@@ -18,10 +18,10 @@ CREATE TABLE role(
 );
 
 CREATE TABLE employee(
-    id INT NOT NULL AUTO_INCREMENT
+    id INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(30) NULL,
     lastname VARCHAR(30) NULL,
-    role_id INT NULL,
+    role_id INT NOT NULL,
     manage_id INT NULL,
     PRIMARY KEY (id)
 );

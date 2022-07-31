@@ -7,7 +7,7 @@ const db = mysql.createConnection(
         host: 'localhost',
         user: 'root',
         password: 'minnasota',
-        database: null,
+        database: 'employee_db',
     },
 );
 db.connect(function(err){
@@ -20,13 +20,13 @@ function startEmployee(){
         type:'list',
         name:'options',
         message:'What would you like to do?',
-        choice:[
+        choices:[
             'View All Departments',
             'View All Roles',
             'View All Employees',
             'Add Department',
             'Add Role',
-            'Add Emplotee',
+            'Add Employee',
             'Exit'
         ]
     })
@@ -39,14 +39,14 @@ function startEmployee(){
             case "View All Roles":
                 viewAllRoles();
                 break;
-            case 'View All Emplotees':
+            case 'View All Employees':
                 viewAllEmployees();
                 break
             case 'Add Department':
                 addDepartment();
                 break;
             case 'Update Employee Role':
-                updateEmploteeRole();
+                updateEmployeeRole();
                 break;
             case 'Exit':
                 db.end();
@@ -58,6 +58,15 @@ function startEmployee(){
 
 function viewAllDepartments(){
     let query = "SELECT * FROM department";
+    db.query(query, function(err,res){
+        if(err) throw err;
+        console.table(res);
+        startEmployee();
+    })
+}
+
+function viewAllRoles(){
+    let query = "SELECT * FROM role"
     db.query(query, function(err,res){
         if(err) throw err;
         console.table(res);
@@ -100,3 +109,4 @@ function addRole(){
     ]);
 }
 
+startEmployee();
