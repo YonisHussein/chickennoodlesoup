@@ -40,5 +40,5 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ![](./image/Capture.PNG)
 
-[Video Link (https://drive.google.com/file/d/1HBs6PwfCDWRJA9uf9h7bbmbI1GrYf94c/view?usp=sharing)]
+![Video Link](https://drive.google.com/file/d/1HBs6PwfCDWRJA9uf9h7bbmbI1GrYf94c/view?usp=sharing)
 
